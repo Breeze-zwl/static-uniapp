@@ -1,8 +1,8 @@
 <template>
   <view class="content">
-    <image class="logo" src="/static/logo.png" />
     <view class="text-area">
-      <text class="title">{{ title }}</text>
+      <text class="text-name">高效机房智控平台</text>
+      <text class="title-name-EN">Chiller Plant Intelligent Control System</text>
     </view>
   </view>
 </template>
@@ -12,26 +12,21 @@ import { ref } from 'vue'
 const title = ref('Hello')
 </script>
 
-<style>
+<style lang="scss">
 .content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.logo {
-  height: 200rpx;
-  width: 200rpx;
-  margin-top: 200rpx;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 50rpx;
+  background-color: pink;
+  width: 100%;
+  height: 100vh
 }
 
 .text-area {
-  display: flex;
-  justify-content: center;
+.test-name {
+    font-size: 48rpx;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 66rpx;
+  }
 }
 
 .title {

@@ -16,15 +16,15 @@ const title = ref('Hello')
 .content {
   background-color: pink;
   width: 100%;
-  height: 100vh
+  height: 100vh;
 }
 
 .text-area {
-.test-name {
+  .test-name {
     font-size: 48rpx;
     font-family: PingFangSC-Regular, PingFang SC;
     font-weight: 400;
-    color: #FFFFFF;
+    color: #ffffff;
     line-height: 66rpx;
   }
 }

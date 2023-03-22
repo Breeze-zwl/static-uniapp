@@ -1,10 +1,37 @@
 {
+  "easycom": {
+		"autoscan": true,
+		"custom": {
+			"^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue"
+		}
+	},
   "pages": [
     {
       "path": "pages/index/index",
       "style": {
-        "navigationBarTitleText": "登陆",
+        "navigationBarTitleText": "登录",
         "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/login/index",
+      "style": {
+        "navigationBarTitleText": "登录",
+        "navigationBarBackgroundColor": "#FFFFFF"
+      }
+    },
+    {
+      "path": "pages/home-page/index",
+      "style": {
+        "navigationBarTitleText": "高效机房智控平台",
+        "navigationBarBackgroundColor": "#FFFFFF"
+      }
+    },
+    {
+      "path": "pages/forget-password/index",
+      "style": {
+        "navigationBarTitleText": "登录",
+        "navigationBarBackgroundColor": "#FFFFFF"
       }
     }
   ],

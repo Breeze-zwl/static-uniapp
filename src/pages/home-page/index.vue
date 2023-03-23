@@ -10,7 +10,6 @@
 <script setup lang="ts">
 import { onShow } from '@dcloudio/uni-app'
 import { reactive, onMounted, defineProps } from 'vue'
-// const props = defineProps({})
 let verify = uni.createCanvasContext('verify')
 const state = reactive({
   pool: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890', // 字符串

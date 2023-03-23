@@ -6,7 +6,7 @@
     </div>
     <div class="forget-password-form">
       <div class="forget-password-phone">
-        <img src="../static/mp-weixin/phone.png" />
+        <img src="～@/static/mp-weixin/phone.png" />
         <div class="area-code">+86</div>
         <input
           class="forget-password-uni-input"
@@ -14,7 +14,7 @@
           placeholder="请输入手机号码" />
       </div>
       <div class="forget-password-phone-code">
-        <img src="../static/mp-weixin/pic-code.png" />
+        <img src="～@/static/mp-weixin/pic-code.png" />
         <input
           class="forget-password-phone-code-input"
           type="number"
@@ -22,7 +22,7 @@
         <div class="handle-code-class">获取验证码</div>
       </div>
       <div class="forget-password-phone-code">
-        <img src="../static/mp-weixin/pic-code.png" />
+        <img src="～@/static/mp-weixin/pic-code.png" />
         <input
           class="forget-password-phone-code-input"
           type="number"
@@ -32,7 +32,7 @@
         </div>
       </div>
       <div class="forget-password-phone">
-        <img src="../static/mp-weixin/password.png" />
+        <img src="～@/static/mp-weixin/password.png" />
         <input
           class="forget-password-uni-input"
           placeholder="请输入新密码" />

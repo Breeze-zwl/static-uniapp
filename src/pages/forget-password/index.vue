@@ -38,7 +38,11 @@
           placeholder="请输入新密码" />
       </div>
       <div class="pass-tips">8～20位的大小写、数字、符号三种组合类</div>
-      <button class="forget-password-login">登录</button>
+      <button
+        class="forget-password-login"
+        @click="handleTohome">
+        登录
+      </button>
     </div>
   </div>
 </template>
@@ -50,6 +54,11 @@ const verifyCodeClass = reactive({
   height: 40,
   pool: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890',
 })
+const handleTohome = () => {
+  uni.reLaunch({
+    url: '/pages/home-page/index',
+  })
+}
 </script>
 <style lang="scss">
 .login-box {

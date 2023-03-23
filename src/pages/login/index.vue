@@ -22,6 +22,7 @@
         placeholder="请输入登录密码">
         <slot name="prefixIcon"></slot>
       </uni-easyinput>
+      <div class="errormsg">*请输入正确的用户名或密码</div>
       <button
         class="login-button"
         @click="login">
@@ -98,5 +99,13 @@ const forgetpassword = () => {
     line-height: 40rpx;
     text-align: right;
   }
+}
+.errormsg {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #f05537;
+  line-height: 34rpx;
+  margin-left: 50rpx;
 }
 </style>

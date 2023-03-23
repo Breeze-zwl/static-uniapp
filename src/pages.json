@@ -33,8 +33,31 @@
         "navigationBarTitleText": "登录",
         "navigationBarBackgroundColor": "#FFFFFF"
       }
+    },
+    {
+      "path": "pages/myself/index",
+      "style": {
+        "navigationBarTitleText": "我的",
+        "navigationBarBackgroundColor": "#FFFFFF"
+      }
     }
   ],
+  "tabBar":{
+    "selectedColor": "#0000ff",
+    "color": "#C0C0C0",
+    "list": [{
+      "text": "首页",
+      "pagePath": "pages/home-page/index",
+      "iconPath": "static/mp-weixin/home-page/home-noselect.png",
+      "selectedIconPath": "static/mp-weixin/home-page/home-select.png"
+    },
+    {
+      "text": "我的",
+      "pagePath": "pages/myself/index",
+      "iconPath": "static/mp-weixin/home-page/my-noselect.png",
+      "selectedIconPath": "static/mp-weixin/home-page/my-select.png"
+    }]
+  },
   "globalStyle": {
     "navigationBarTextStyle": "black",
     "navigationBarBackgroundColor": "#F8F8F8",

@@ -29,6 +29,15 @@
       <div></div>
       <div></div>
     </div>
+    <van-popup
+      :show="popupShow"
+      position="bottom"
+      custom-style="height: 40%;"
+      round
+      closeable
+      @close="onClosepopup">
+      内容
+    </van-popup>
   </div>
 </template>
 <script setup lang="ts">
@@ -41,14 +50,18 @@ const addressNameCity = ref('青岛市')
 const addressNameDistrict = ref('崂山区')
 const temperature = ref(15)
 const weather = ref('晴')
+const popupShow = ref(false)
 onLoad(() => {
   amapPlugin.value = new AMapWX({
     key: AampWX.value,
   })
-  console.log(amapPlugin.value)
   getRegeo()
   getWeather()
 })
+const onClosepopup = () => {
+  popupShow.value = false
+  console.log(1111)
+}
 const getRegeo = () => {
   amapPlugin.value.getRegeo({
     success: (data: any) => {
@@ -68,15 +81,7 @@ const getWeather = () => {
   })
 }
 const handleChangeLocal = () => {
-  uni.showActionSheet({
-    itemList: ['A', 'B', 'C'],
-    success: function (res) {
-      console.log('选中了第' + (res.tapIndex + 1) + '个按钮')
-    },
-    fail: function (res) {
-      console.log(res.errMsg)
-    },
-  })
+  popupShow.value = true
 }
 </script>
 <style lang="scss">

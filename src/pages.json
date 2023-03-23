@@ -24,7 +24,8 @@
       "path": "pages/home-page/index",
       "style": {
         "navigationBarTitleText": "高效机房智控平台",
-        "navigationBarBackgroundColor": "#FFFFFF"
+        "navigationBarBackgroundColor": "#FFFFFF",
+        "navigationStyle": "custom"
       }
     },
     {

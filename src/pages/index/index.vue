@@ -25,10 +25,10 @@
         @click="handlegrement">
         <img
           v-if="argeement"
-          src="../static/mp-weixin/rij.png" />
+          src="~@/static/mp-weixin/rij.png" />
         <img
           v-else
-          src="../static/mp-weixin/rig.png" />
+          src="~@/static/mp-weixin/rig.png" />
         <view class="user-text">已阅读并同意</view>
         <a href="###">《》</a>
       </div>

@@ -37,6 +37,11 @@
       closeable
       @close="onClosepopup">
       内容
+      <div>
+        <van-picker
+          :columns="columns"
+          @change="onChange" />
+      </div>
     </van-popup>
   </div>
 </template>
@@ -51,6 +56,7 @@ const addressNameDistrict = ref('崂山区')
 const temperature = ref(15)
 const weather = ref('晴')
 const popupShow = ref(false)
+const columns = ref(['杭州', '宁波', '温州', '嘉兴', '湖州'])
 onLoad(() => {
   amapPlugin.value = new AMapWX({
     key: AampWX.value,
@@ -58,6 +64,10 @@ onLoad(() => {
   getRegeo()
   getWeather()
 })
+const onChange = (event: any) => {
+  const { picker, value, index } = event.detail
+  console.log(picker, value, index)
+}
 const onClosepopup = () => {
   popupShow.value = false
   console.log(1111)

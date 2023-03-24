@@ -57,6 +57,7 @@ const temperature = ref(15)
 const weather = ref('晴')
 const popupShow = ref(false)
 const columns = ref(['杭州', '宁波', '温州', '嘉兴', '湖州'])
+//路径更改
 onLoad(() => {
   amapPlugin.value = new AMapWX({
     key: AampWX.value,

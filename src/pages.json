@@ -64,15 +64,15 @@
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8",
     "usingComponents": {
-      "van-button": "/wxcomponents/weapp/button/index",
-      "van-popup": "/wxcomponents/weapp/popup/index",
-      "van-picker": "/wxcomponents/weapp/picker/index",
-      "van-transition": "/wxcomponents/weapp/transition/index",
-      "van-overlay": "/wxcomponents/weapp/overlay/index",
-      "van-info": "/wxcomponents/weapp/info/index",
-      "van-icon": "/wxcomponents/weapp/icon/index",
-      "van-loading": "/wxcomponents/weapp/loading/index",
-      "picker-column": "/wxcomponents/weapp/picker-column/index"
+      "van-button": "/wxcomponents/vant-weapp/button/index",
+      "van-popup": "/wxcomponents/vant-weapp/popup/index",
+      "van-picker": "/wxcomponents/vant-weapp/picker/index",
+      "van-transition": "/wxcomponents/vant-weapp/transition/index",
+      "van-overlay": "/wxcomponents/vant-weapp/overlay/index",
+      "van-info": "/wxcomponents/vant-weapp/info/index",
+      "van-icon": "/wxcomponents/vant-weapp/icon/index",
+      "van-loading": "/wxcomponents/vant-weapp/loading/index",
+      "picker-column": "/wxcomponents/vant-weapp/picker-column/index"
     }
   }
 }

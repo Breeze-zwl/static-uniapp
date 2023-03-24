@@ -66,13 +66,7 @@
     "usingComponents": {
       "van-button": "/wxcomponents/vant-weapp/button/index",
       "van-popup": "/wxcomponents/vant-weapp/popup/index",
-      "van-picker": "/wxcomponents/vant-weapp/picker/index",
-      "van-transition": "/wxcomponents/vant-weapp/transition/index",
-      "van-overlay": "/wxcomponents/vant-weapp/overlay/index",
-      "van-info": "/wxcomponents/vant-weapp/info/index",
-      "van-icon": "/wxcomponents/vant-weapp/icon/index",
-      "van-loading": "/wxcomponents/vant-weapp/loading/index",
-      "picker-column": "/wxcomponents/vant-weapp/picker-column/index"
+      "van-picker": "/wxcomponents/vant-weapp/picker/index"
     }
   }
 }

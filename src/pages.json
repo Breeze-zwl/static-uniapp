@@ -14,6 +14,13 @@
       }
     },
     {
+      "path": "pages/data-center/index",
+      "style": { 
+        "navigationBarTitleText": "数据中心",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
       "path": "pages/login/index",
       "style": {
         "navigationBarTitleText": "登录",
@@ -42,7 +49,16 @@
         "navigationBarBackgroundColor": "#FFFFFF"
       }
     }
-  ],
+      ,{
+            "path" : "pages/data-center/components/data-list/data-list",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
   "tabBar":{
     "selectedColor": "#0000ff",
     "color": "#C0C0C0",
@@ -63,6 +79,7 @@
     "navigationBarTextStyle": "black",
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8",
+    "backgroundColorTop":"#FFFFFF",
     "usingComponents": {
       "van-button": "/wxcomponents/vant-weapp/button/index",
       "van-popup": "/wxcomponents/vant-weapp/popup/index",

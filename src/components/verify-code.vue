@@ -11,6 +11,7 @@
 import { onShow } from '@dcloudio/uni-app'
 import { reactive, onMounted, defineProps, getCurrentInstance } from 'vue'
 // const props = defineProps({})
+const emits = defineEmits(['emitsVerify'])
 const _that = getCurrentInstance()
 let verify = uni.createCanvasContext('verify', _that)
 const state = reactive({
@@ -21,6 +22,7 @@ const state = reactive({
 })
 const handleDraw = () => {
   state.imgCode = draw()
+  emits('emitsVerify', state.imgCode)
 }
 // 随机数
 const randomNum = (min: any, max: any) => {

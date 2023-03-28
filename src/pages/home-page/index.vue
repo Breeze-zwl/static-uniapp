@@ -61,25 +61,64 @@
         </div>
       </div>
       <div class="handle-center">
-        <div class="comhandelstyle">
+        <div
+          class="comhandelstyle"
+          @click="handleTotimingcontrol">
           <img src="~@/static/mp-weixin/home-page/check.png" />
           <div class="handle-center-text">
             <div class="handle-center-hand">
               <div>实时监测</div>
-              <div>在线</div>
+              <div>
+                <div
+                  v-if="false"
+                  class="zhuangtai">
+                  <div class="bluepoint boxsty"></div>
+                  <div class="bluetext">在线</div>
+                </div>
+                <div
+                  v-else
+                  class="zhuangtai">
+                  <div class="graypoint boxsty"></div>
+                  <div class="graytext">离线</div>
+                </div>
+              </div>
             </div>
             <div class="handle-center-hand">
-              <div class="handle-myutext">群控关闭</div>
+              <div
+                v-if="false"
+                class="handle-myutext group-close-box group-black">
+                群控关闭
+              </div>
+              <div
+                v-else
+                class="handle-myutext group-close-box group-green">
+                群控开启
+              </div>
               <div class="handle-myutext">今日运行时长：100h</div>
             </div>
           </div>
         </div>
-        <div class="comhandelstyle">
+        <div
+          class="comhandelstyle"
+          @click="handleToDatacenter">
           <img src="~@/static/mp-weixin/home-page/datacenter.png" />
           <div class="handle-center-text">
             <div class="handle-center-hand">
               <div>数据中心</div>
-              <div>正常</div>
+              <div>
+                <div
+                  v-if="false"
+                  class="zhuangtai">
+                  <div class="bluepoint boxsty"></div>
+                  <div class="bluetext">正常</div>
+                </div>
+                <div
+                  v-else
+                  class="zhuangtai">
+                  <div class="redpiont boxsty"></div>
+                  <div class="redtext">异常</div>
+                </div>
+              </div>
             </div>
             <div class="handle-center-hand">
               <div class="handle-myutext">今日能耗：20000kmh</div>
@@ -87,12 +126,17 @@
             </div>
           </div>
         </div>
-        <div class="comhandelstyle">
+        <div
+          class="comhandelstyle"
+          @click="handleToPolicecenter">
           <img src="~@/static/mp-weixin/home-page/plice-center.png" />
           <div class="handle-center-text">
             <div class="handle-center-hand">
               <div>报警中心</div>
-              <div>严重：0</div>
+              <div class="zhuangtai">
+                <div class="redpiont boxsty"></div>
+                <div class="redtext">严重：0</div>
+              </div>
             </div>
             <div class="handle-center-hand">
               <div class="handle-myutext">紧急：0</div>
@@ -106,7 +150,20 @@
           <div class="handle-center-text">
             <div class="handle-center-hand">
               <div>智能定时</div>
-              <div>启用中</div>
+              <div>
+                <div
+                  v-if="false"
+                  class="zhuangtai">
+                  <div class="greenpoint boxsty"></div>
+                  <div class="greentext">启用中</div>
+                </div>
+                <div
+                  v-else
+                  class="zhuangtai">
+                  <div class="graypoint boxsty"></div>
+                  <div class="graytext">未启用</div>
+                </div>
+              </div>
             </div>
             <div class="handle-center-hand">
               <div></div>
@@ -154,6 +211,21 @@ onLoad(() => {
   getRegeo()
   getWeather()
 })
+const handleToDatacenter = () => {
+  uni.navigateTo({
+    url: '/pages/data-center/index',
+  })
+}
+const handleTotimingcontrol = () => {
+  uni.navigateTo({
+    url: '/pages/timing-control/index',
+  })
+}
+const handleToPolicecenter = () => {
+  uni.navigateTo({
+    url: '/pages/timing-control/index',
+  })
+}
 const handleonCancel = (event: any) => {
   const { value, index } = event.detail
   console.log(value, index)
@@ -307,12 +379,17 @@ const handleChangeLocal = () => {
     .timing {
       width: 334rpx;
       height: 158rpx;
-      background: linear-gradient(125deg, rgba(38, 129, 255, 0.04) 0%, rgba(38, 129, 255, 0.15) 100%);
+      background: linear-gradient(135deg, #e3eeff 0%, #f7faff 100%);
       border-radius: 4rpx;
       display: flex;
       flex-direction: column;
       justify-content: center;
       text-align: center;
+      .react-desc {
+        font-size: 28rpx;
+        font-weight: 400;
+        color: #333333;
+      }
       .react-text {
         font-size: 40rpx;
         font-weight: 500;
@@ -339,6 +416,11 @@ const handleChangeLocal = () => {
         font-weight: 500;
         color: #333333;
         line-height: 56rpx;
+      }
+      .react-desc {
+        font-size: 28rpx;
+        font-weight: 400;
+        color: #333333;
       }
       .react-text-red {
         font-size: 40rpx;
@@ -378,13 +460,63 @@ const handleChangeLocal = () => {
         color: #333333;
         font-size: 28rpx;
       }
+      .group-close-box {
+        width: 128rpx;
+        height: 40rpx;
+        border-radius: 4rpx;
+        font-size: 24rpx;
+        text-align: center;
+        line-height: 40rpx;
+      }
+      .group-green {
+        background: #eaf3ff;
+        color: #2681ff;
+      }
+      .group-black {
+        color: #fff;
+        background: #333333;
+      }
     }
     .handle-center-hand {
       margin-bottom: 8rpx;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      .zhuangtai {
+        display: flex;
+        align-items: center;
+      }
     }
   }
+}
+.boxsty {
+  height: 16rpx;
+  width: 16rpx;
+  border-radius: 50%;
+  margin-right: 18rpx;
+}
+.bluepoint {
+  background-color: #2681ff;
+}
+.bluetext {
+  color: #2681ff;
+}
+.graypoint {
+  background-color: #666666;
+}
+.graytext {
+  color: #666666;
+}
+.greenpoint {
+  background-color: #00b45a;
+}
+.greentext {
+  color: #00b45a;
+}
+.redpiont {
+  background-color: #f05537;
+}
+.redtext {
+  color: #f05537;
 }
 </style>

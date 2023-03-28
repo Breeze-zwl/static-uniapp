@@ -1,9 +1,5 @@
 <template>
   <div>
-    <div class="login-box">
-      <div class="login-text">忘记密码</div>
-      <div class="login-desc">欢迎使用海尔高效机房智控平台</div>
-    </div>
     <div class="forget-password-form">
       <div class="forget-password-phone">
         <img src="~@/static/mp-weixin/phone.png" />
@@ -41,7 +37,7 @@
       <button
         class="forget-password-login"
         @click="handleTohome">
-        登录
+        确定
       </button>
     </div>
   </div>
@@ -59,28 +55,9 @@ const emitsVerify = (value: any) => {
 }
 </script>
 <style lang="scss">
-.login-box {
-  margin-top: 80rpx;
-  margin-left: 48rpx;
-  .login-text {
-    font-size: 48rpx;
-    font-family: PingFangSC-Medium, PingFang SC;
-    font-weight: 500;
-    color: #333333;
-    line-height: 66rpx;
-    margin-bottom: 16rpx;
-  }
-  .login-desc {
-    font-size: 28rpx;
-    font-family: PingFangSC-Regular, PingFang SC;
-    font-weight: 400;
-    color: #666666;
-    line-height: 40rpx;
-  }
-}
 .forget-password-form {
   padding: 0 48rpx;
-  margin-top: 158rpx;
+  margin-top: 32rpx;
   image {
     width: 48rpx;
     height: 48rpx;

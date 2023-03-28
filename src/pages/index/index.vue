@@ -2,8 +2,9 @@
   <view class="content">
     <img
       class="bgimages"
-      src="~@/static/mp-weixin/login-bg.png" />
+      src="~@/static/mp-weixin/login-bg.jpeg" />
     <view class="text-area">
+      <img src="~@/static/mp-weixin/haier.png" />
       <div class="text-name">高效机房智控平台</div>
       <div class="title-name-EN">Chiller Plant Intelligent Control System</div>
     </view>
@@ -67,8 +68,13 @@ const getphonenumber = (e: any) => {
 }
 
 .text-area {
-  margin-top: 504rpx;
+  margin-top: 336rpx;
   margin-left: 64rpx;
+  image {
+    width: 262rpx;
+    height: 120rpx;
+    margin-bottom: 48rpx;
+  }
   .text-name {
     font-size: 48rpx;
     font-family: PingFangSC-Regular, PingFang SC;

@@ -43,21 +43,47 @@
       }
     },
     {
+      "path": "pages/revisepassword/index",
+      "style": {
+        "navigationBarTitleText": "修改密码",
+        "navigationBarBackgroundColor": "#FFFFFF"
+      }
+    },
+    {
       "path": "pages/myself/index",
       "style": {
         "navigationBarTitleText": "我的",
         "navigationBarBackgroundColor": "#FFFFFF"
       }
+    },
+    // {
+    //   "path" : "pages/data-center/components/data-list/data-list",
+    //   "style" :{
+    //     "navigationBarTitleText": "",
+    //     "enablePullDownRefresh": false
+    //   }
+    // },
+    {
+      "path": "pages/timing-control/index",
+      "style": {
+        "navigationBarTitleText": "实时监测",
+        "navigationBarBackgroundColor": "#FFFFFF"
+      }
+    },
+    {
+      "path": "pages/police-center/index",
+      "style": {
+        "navigationBarTitleText": "报警中心",
+        "navigationBarBackgroundColor": "#FFFFFF"
+      }
+    },
+    {
+      "path": "pages/consume-curve/index",
+      "style": {
+        "navigationBarTitleText": "智能定时",
+        "navigationBarBackgroundColor": "#FFFFFF"
+      }
     }
-      ,{
-            "path" : "pages/data-center/components/data-list/data-list",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
     ],
   "tabBar":{
     "selectedColor": "#0000ff",
@@ -83,7 +109,11 @@
     "usingComponents": {
       "van-button": "/wxcomponents/vant-weapp/button/index",
       "van-popup": "/wxcomponents/vant-weapp/popup/index",
-      "van-picker": "/wxcomponents/vant-weapp/picker/index"
+      "van-picker": "/wxcomponents/vant-weapp/picker/index",
+      "van-cell": "/wxcomponents/vant-weapp/cell/index",
+      "van-tab": "/wxcomponents/vant-weapp/tab/index",
+      "van-tabs": "/wxcomponents/vant-weapp/tabs/index",
+      "van-switch": "/wxcomponents/vant-weapp/switch/index"
     }
   }
 }

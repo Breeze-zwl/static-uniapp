@@ -10,6 +10,7 @@
         prefixIcon="person"
         v-model="account"
         trim="all"
+        :styles="styles"
         :inputBorder="false"
         placeholder="请输入手机号码/账号"></uni-easyinput>
       <uni-easyinput
@@ -22,7 +23,11 @@
         placeholder="请输入登录密码">
         <slot name="prefixIcon"></slot>
       </uni-easyinput>
-      <div class="errormsg">*请输入正确的用户名或密码</div>
+      <div
+        v-if="successlogin"
+        class="errormsg">
+        *请输入正确的用户名或密码
+      </div>
       <button
         class="login-button"
         @click="login">
@@ -40,8 +45,12 @@
 import { ref } from 'vue'
 const account = ref()
 const password = ref()
+const successlogin = ref(false)
+const styles = ref({
+  borderBottom: '2rpx solid red',
+})
 const login = () => {
-  console.log(account, password)
+  successlogin.value = true
   uni.reLaunch({
     url: '/pages/home-page/index',
   })
@@ -58,7 +67,6 @@ const forgetpassword = () => {
   margin-left: 48rpx;
   .login-text {
     font-size: 48rpx;
-    font-family: PingFangSC-Medium, PingFang SC;
     font-weight: 500;
     color: #333333;
     line-height: 66rpx;
@@ -66,7 +74,6 @@ const forgetpassword = () => {
   }
   .login-desc {
     font-size: 28rpx;
-    font-family: PingFangSC-Regular, PingFang SC;
     font-weight: 400;
     color: #666666;
     line-height: 40rpx;
@@ -93,7 +100,6 @@ const forgetpassword = () => {
   .miss-password {
     margin-top: 32rpx;
     font-size: 28rpx;
-    font-family: PingFangSC-Regular, PingFang SC;
     font-weight: 400;
     color: #666666;
     line-height: 40rpx;
@@ -102,7 +108,6 @@ const forgetpassword = () => {
 }
 .errormsg {
   font-size: 24rpx;
-  font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
   color: #f05537;
   line-height: 34rpx;

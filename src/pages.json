@@ -82,12 +82,6 @@
       "style": { 
         "navigationBarTitleText": "详情参数"
       }
-     },
-     {
-      "path": "pages/data-electric/index",
-      "style": { 
-        "navigationBarTitleText": "电能数据"
-      }
      }
   ],
   "tabBar":{

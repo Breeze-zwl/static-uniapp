@@ -48,7 +48,6 @@
 </template>
 <script setup lang="ts">
 import verifyCode from '@/components/verify-code.vue'
-import { reactive } from 'vue'
 const handleTohome = () => {
   uni.reLaunch({
     url: '/pages/home-page/index',

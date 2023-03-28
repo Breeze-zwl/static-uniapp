@@ -1,8 +1,8 @@
 <template>
   <view class="content">
-    <page-tabs :tabData="menuList" :defaultIndex="0"></page-tabs>
-    <view class="search-list" :class="arrowDown && 'active'">
-      <view v-for="(item, index) in searchList" :key="index"  :class="selectedData === item.code && 'checked'" >
+    <page-tabs :tabData="menuList" :defaultIndex="activeindex"  @tabClick="tabClick"></page-tabs>
+    <view class="search-list" :class="arrowDown && 'active'" :style="{ height: `${iHeight}px` }">
+      <view v-for="(item, index) in searchList" :key="index"  class="s-list-item" :class="selectedData === item.code && 'checked'" >
         {{item.title}}
       </view>
       <view class="more"  @click="arrowhandle">
@@ -10,7 +10,7 @@
       </view>
     </view>
     <view class="data-list">
-      <data-list :dataList="dataList"></data-list>
+      <data-list :dataList="dataList" :scrollheight="scrollheight"></data-list>
     </view>
   </view>
 </template>
@@ -19,24 +19,26 @@
 import { ref } from 'vue'
 import PageTabs from '@/components/page-tabs/page-tabs.vue'
 import DataList from './components/data-list.vue'
-export interface dataModel {
-    img: string,
-    title: string,
-    status: number | string,
-    inPiont: string,
-    outPiont: string,
-  }
+import type { dataModel } from './index.service'
+import { onReady } from '@dcloudio/uni-app'
+import { onMounted } from 'vue'
  const dataList = ref<Array<dataModel>>([
-    { img:"/static/mp-weixin/list_data.jpg",title: '1#冷机', status:1,inPiont:'7',outPiont:'7' },
-    { img:"/static/mp-weixin/list_data.jpg",title: '2#冷机', status:2,inPiont:'7',outPiont:'7' },
-    { img:"/static/mp-weixin/list_data.jpg",title: '3#冷机', status:1,inPiont:'7',outPiont:'7' },
+    { id:1,img:"/static/mp-weixin/list_data.jpg",title: '1#冷机', status:1,inPiont:'7',outPiont:'7' },
+    { id:2,img:"/static/mp-weixin/list_data.jpg",title: '2#冷机', status:2,inPiont:'7',outPiont:'7' },
+    { id:3,img:"/static/mp-weixin/list_data.jpg",title: '3#冷机', status:1,inPiont:'7',outPiont:'7' },
+    { id:1,img:"/static/mp-weixin/list_data.jpg",title: '1#冷机', status:1,inPiont:'7',outPiont:'7' },
+    { id:2,img:"/static/mp-weixin/list_data.jpg",title: '2#冷机', status:2,inPiont:'7',outPiont:'7' },
+    { id:3,img:"/static/mp-weixin/list_data.jpg",title: '3#冷机', status:1,inPiont:'7',outPiont:'7' },
   ])
  const selectedData = ref<number>(2)
  const arrowDown = ref<boolean>(false)
+ const iHeight = ref<string | number>('')
+ const scrollheight = ref< number>(0)
  const menuList = ref([
    { title: '实时数据', code:1 },
    { title: '电能数据', code:2 },
  ])
+ const activeindex = ref<number>(0)
  const searchList = ref([
    { title: '全部', code:1 },
    { title: '主机', code:2 },
@@ -58,6 +60,24 @@ export interface dataModel {
  const arrowhandle = ()=>{
   arrowDown.value = !arrowDown.value
  }
+ onMounted(()=>{
+  const query = uni.createSelectorQuery()
+  const windowH = uni.getSystemInfoSync().windowHeight 
+  query.select('.s-list-item').boundingClientRect((data:any) => {
+    let iH = (data.height) * 2 + 24
+    iHeight.value = iH
+  }).exec()
+  query.select('.data-list').boundingClientRect((data:any) => {
+    let iH = windowH - data.top + 30
+    scrollheight.value = iH
+  }).exec();
+ })
+ const tabClick = (type:number|string)=>{
+  let path = Number(type) === 1 ? `/pages/data-electric/index`:`/pages/data-center/index`
+  uni.navigateTo({
+    url: path
+  });
+}
 </script>
 <style lang="scss">
  .tab{
@@ -84,7 +104,7 @@ export interface dataModel {
    }
  }
  .search-list.active{
-   height: auto;
+   height: auto!important;
  }
  .search-list{
     display: flex;
@@ -94,7 +114,7 @@ export interface dataModel {
     // background:red;
     border:1px soild red;
     box-sizing: border-box;
-    height: 89px;
+    // height: 89px;
     overflow: hidden;
     position: relative;
    view{
@@ -116,6 +136,7 @@ export interface dataModel {
       right:0;
       bottom:0;
       padding:10rpx;
+      margin-bottom:0;
    }
  }
  .data-list{

@@ -1,14 +1,13 @@
 <template>
-  <view class="tab-container">
-      <view class="tab-item-box">
+  <view class="s-tab-container">
+      <view class="s-tab-item-box">
           <block v-for="(item, index) in tabList" :key="index">
               <view
-                class="tab-item"
+                class="s-tab-item"
                 :id="'tab_' + index"
                 :class="{ 'tab-item-active': activeIndex === index }"
                 @click="tabClick(index)">
                  {{ item.title || '' }}
-                  <view  class="underLine"></view>
                </view>
           </block>
       </view>
@@ -66,7 +65,7 @@ export interface dataModel {
 </script>
 
 <style lang="scss" scoped>
-.tab-container {
+.s-tab-container {
   font-size: 32rpx;
   font-family: PingFangSC-Regular, PingFang SC;
   height: 45px;

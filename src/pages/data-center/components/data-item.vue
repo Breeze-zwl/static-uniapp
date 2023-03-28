@@ -1,23 +1,23 @@
 <template>
 <view>
   <view ref="list" class="list">
-    <cell  class="list-cell">
-        <view class="images-box">
-        <img class="images" :src="list.img"/>
+    <cell class="list-cell" v-for="(item,index) in list" :key="index" >
+        <view class="images-box" @click.native="onItemClick(item)">
+          <img class="images" :src="item.img"/>
         </view>
-        <view class="data-right">
+        <view class="data-right" @click.native="onItemClick(item)">
           <view class="title">
-            <h4 class="t-name">{{list.title}}</h4>
-            <h3 class="t-status" :class="{ 'error': list.status !== 1 }">
+            <h4 class="t-name">{{item.title}}</h4>
+            <h3 class="t-status" :class="{ 'error': item.status !== 1 }">
               <i class="t-node"></i>
-              <h4 class="t-s-info">{{list.status === 1 ? '开机' : '故障'}}</h4>
+              <h4 class="t-s-info">{{item.status === 1 ? '开机' : '故障'}}</h4>
             </h3>
           </view>
           <view class="detail">
             <h3 class="datail-info mb">
               <span class="d-name">出水温度：</span>
               <view class="d-val">
-                <view class="d-val-l">{{list.inPiont}}</view>
+                <view class="d-val-l">{{item.inPiont}}</view>
                 <i class="d-val-r"> ℃</i>
               </view>
 
@@ -25,7 +25,7 @@
             <h3 class="datail-info">
               <span class="d-name">进水温度：</span>
               <view class="d-val">
-                <view class="d-val-l">{{list.inPiont}}</view>
+                <view class="d-val-l">{{item.inPiont}}</view>
                 <i class="d-val-r"> ℃</i>
               </view>
             </h3>
@@ -38,13 +38,7 @@
 
 <script setup lang="ts">
 import { defineProps, reactive, ref, watch } from 'vue'
-export interface dataModel {
-    img: string,
-    title: string,
-    status: number | string,
-    inPiont: string,
-    outPiont: string,
-  }
+import type { dataModel } from '../index.service'
  const props = defineProps({
    item: {
       type: Array<dataModel>,
@@ -54,10 +48,14 @@ export interface dataModel {
   const list = ref<Array<dataModel>>([])
   watch(() => props.item, (val) => {
       if(val){
-        console.log('1111',val)
         list.value = val;
       }
     },{ immediate: true })
+  const onItemClick = (item:dataModel)=>{
+      uni.navigateTo({
+        url: `/pages/data-detail/index`
+      });
+  }
 </script>
 
 <style lang="scss">
@@ -75,7 +73,6 @@ export interface dataModel {
       width: 280rpx;
       height: 170rpx;
       margin-right:64rpx;
-      background:red;
      .images{
        max-width: 280rpx;
        max-height: 180rpx;

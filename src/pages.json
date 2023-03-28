@@ -14,13 +14,6 @@
       }
     },
     {
-      "path": "pages/data-center/index",
-      "style": { 
-        "navigationBarTitleText": "数据中心",
-        "enablePullDownRefresh": false
-      }
-    },
-    {
       "path": "pages/login/index",
       "style": {
         "navigationBarTitleText": "登录",
@@ -56,13 +49,6 @@
         "navigationBarBackgroundColor": "#FFFFFF"
       }
     },
-    // {
-    //   "path" : "pages/data-center/components/data-list/data-list",
-    //   "style" :{
-    //     "navigationBarTitleText": "",
-    //     "enablePullDownRefresh": false
-    //   }
-    // },
     {
       "path": "pages/timing-control/index",
       "style": {
@@ -83,8 +69,27 @@
         "navigationBarTitleText": "智能定时",
         "navigationBarBackgroundColor": "#FFFFFF"
       }
-    }
-    ],
+    },
+    {
+      "path": "pages/data-center/index",
+      "style": { 
+        "navigationBarTitleText": "数据中心",
+        "onReachBottomDistance": 10
+      }
+     },
+     {
+      "path": "pages/data-detail/index",
+      "style": { 
+        "navigationBarTitleText": "详情参数"
+      }
+     },
+     {
+      "path": "pages/data-electric/index",
+      "style": { 
+        "navigationBarTitleText": "电能数据"
+      }
+     }
+  ],
   "tabBar":{
     "selectedColor": "#0000ff",
     "color": "#C0C0C0",
@@ -113,7 +118,9 @@
       "van-cell": "/wxcomponents/vant-weapp/cell/index",
       "van-tab": "/wxcomponents/vant-weapp/tab/index",
       "van-tabs": "/wxcomponents/vant-weapp/tabs/index",
-      "van-switch": "/wxcomponents/vant-weapp/switch/index"
+      "van-switch": "/wxcomponents/vant-weapp/switch/index",
+      "van-loading": "/wxcomponents/vant-weapp/loading/index",
+      "van-toast": "/wxcomponents/vant-weapp/toast/index"
     }
   }
 }

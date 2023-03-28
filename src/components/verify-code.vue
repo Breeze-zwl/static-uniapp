@@ -9,8 +9,7 @@
 </template>
 <script setup lang="ts">
 import { onShow } from '@dcloudio/uni-app'
-import { reactive, onMounted, defineProps, getCurrentInstance } from 'vue'
-// const props = defineProps({})
+import { reactive, onMounted, getCurrentInstance } from 'vue'
 const emits = defineEmits(['emitsVerify'])
 const _that = getCurrentInstance()
 let verify = uni.createCanvasContext('verify', _that)

@@ -44,8 +44,9 @@ const handlegrement = () => {
   argeement.value = !argeement.value
 }
 const toLogin = () => {
+  console.log(123123)
   uni.navigateTo({
-    url: '/pages/data-center/index',
+    url: '/pages/login/index',
   })
 }
 const getphonenumber = (e: any) => {

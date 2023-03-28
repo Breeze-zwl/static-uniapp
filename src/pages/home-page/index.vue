@@ -223,7 +223,7 @@ const handleTotimingcontrol = () => {
 }
 const handleToPolicecenter = () => {
   uni.navigateTo({
-    url: '/pages/timing-control/index',
+    url: '/pages/police-center/index',
   })
 }
 const handleonCancel = (event: any) => {

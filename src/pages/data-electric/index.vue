@@ -19,11 +19,13 @@
         <qiun-data-charts
           type="ring"
           :opts="opts"
-          :chartData="chartData"
-          :canvas2d="true"
-          pixelRatio="1" />
+          :chartData="chartData" />
       </view>
-      <view class="button-info">电量查询</view>
+      <cover-view
+        class="button-info"
+        @click="handleToeelEctric">
+        电量查询
+      </cover-view>
     </view>
     <view class="ele-table">
       <view class="ele-top">
@@ -46,7 +48,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from 'vue'
+import { ref, reactive, onMounted } from 'vue'
 import { onReady } from '@dcloudio/uni-app'
 const active = ref<number | string>('1')
 const eleValue = ref([
@@ -57,7 +59,6 @@ const eleValue = ref([
   { title: '冷机', code: '3882', rotate: '50%' },
 ])
 const chartData = ref<object>({})
-const pixelRatio = ref<number>(1)
 const opts = reactive({
   rotate: false,
   rotateLock: false,
@@ -97,22 +98,19 @@ const opts = reactive({
       borderColor: '#777',
       centerColor: '#FFFFFF',
       customRadius: 0,
-      linearType: 'none',
+      linearType: 'custom',
     },
   },
 })
 onReady(() => {
-  //#ifdef MP-ALIPAY
-  uni.getSystemInfo({
-    success: function (res) {
-      if (res.pixelRatio > 1) {
-        pixelRatio.value = 2
-      }
-    },
-  })
-  //#endif
   getServerData()
 })
+const handleToeelEctric = () => {
+  console.log(123123123)
+  uni.navigateTo({
+    url: '/pages/electric-search/index',
+  })
+}
 const getServerData = () => {
   setTimeout(() => {
     //模拟服务器返回数据，如果数据格式和标准格式不同，需自行按下面的格式拼接
@@ -144,35 +142,33 @@ const getServerData = () => {
   }
 }
 .uchart {
-  position: relative;
-  height: 500rpx;
   .button-info {
     position: absolute;
-    right: 50rpx;
-    bottom: 30rpx;
+    right: 56rpx;
+    margin-top: -120rpx;
     width: 176rpx;
     height: 64rpx;
     background: #ffffff;
     border-radius: 4rpx;
     border: 2rpx solid #2681ff;
     font-size: 28rpx;
-    font-family: PingFangSC-Regular, PingFang SC;
     font-weight: 400;
     color: #2681ff;
     text-align: center;
     line-height: 64rpx;
+    z-index: 999;
   }
 }
 .charts-box {
   width: 100%;
   height: 500rpx;
-  margin-left: -90rpx;
+  overflow: hidden;
+  margin-left: -70rpx;
 }
 .ele-table {
   margin: 0 32rpx;
   .ele-h {
     font-size: 28rpx;
-    font-family: PingFangSC-Regular, PingFang SC;
     font-weight: 400;
     color: #666666;
     flex: 1;

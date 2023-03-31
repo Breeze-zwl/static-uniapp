@@ -1,4 +1,5 @@
 <template>
+  <page-meta :page-style="popupShow ? 'overflow: hidden;' : ''"></page-meta>
   <div>
     <img
       class="dayline"
@@ -39,7 +40,9 @@
             </div>
           </div>
           <div class="sort-timing">
-            <div class="timing">
+            <div
+              class="timing"
+              @click="handleToCOP">
               <div class="react-text">3.8</div>
               <div class="react-desc">实时COP</div>
             </div>
@@ -145,7 +148,9 @@
             </div>
           </div>
         </div>
-        <div class="comhandelstyle">
+        <div
+          class="comhandelstyle"
+          @click="handleToTime">
           <img src="~@/static/mp-weixin/home-page/timing.png" />
           <div class="handle-center-text">
             <div class="handle-center-hand">
@@ -176,7 +181,7 @@
     <van-popup
       :show="popupShow"
       position="bottom"
-      custom-style="height: 40%;"
+      custom-style="height: 50%;"
       round
       @close="onClosepopup">
       <div>
@@ -211,6 +216,16 @@ onLoad(() => {
   getRegeo()
   getWeather()
 })
+const handleToCOP = () => {
+  uni.navigateTo({
+    url: '/pages/consume-eletric/index',
+  })
+}
+const handleToTime = () => {
+  uni.navigateTo({
+    url: '/pages/consume-curve/index',
+  })
+}
 const handleToDatacenter = () => {
   uni.navigateTo({
     url: '/pages/data-center/index',

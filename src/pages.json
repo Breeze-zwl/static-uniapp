@@ -82,6 +82,18 @@
       "style": { 
         "navigationBarTitleText": "详情参数"
       }
+     },
+     {
+      "path": "pages/consume-eletric/index",
+      "style": { 
+        "navigationBarTitleText": "耗电曲线"
+      }
+     },
+     {
+      "path":"pages/electric-search/index",
+      "style": { 
+        "navigationBarTitleText": "电能查询"
+      }
      }
   ],
   "tabBar":{
@@ -114,7 +126,8 @@
       "van-tabs": "/wxcomponents/vant-weapp/tabs/index",
       "van-switch": "/wxcomponents/vant-weapp/switch/index",
       "van-loading": "/wxcomponents/vant-weapp/loading/index",
-      "van-toast": "/wxcomponents/vant-weapp/toast/index"
+      "van-toast": "/wxcomponents/vant-weapp/toast/index",
+      "van-calendar": "/wxcomponents/vant-weapp/calendar/index"
     }
   }
 }

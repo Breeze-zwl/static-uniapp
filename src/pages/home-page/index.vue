@@ -181,12 +181,12 @@
     <van-popup
       :show="popupShow"
       position="bottom"
-      custom-style="height: 50%;"
       round
       @close="onClosepopup">
       <div>
         <van-picker
           show-toolbar
+          :visible-item-count="4"
           title="请选择"
           :columns="columns"
           @cancel="handleonCancel"

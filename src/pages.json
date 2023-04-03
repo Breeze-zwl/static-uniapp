@@ -94,6 +94,12 @@
       "style": { 
         "navigationBarTitleText": "电能查询"
       }
+     },
+     {
+      "path":"pages/policerecord/index",
+      "style": { 
+        "navigationBarTitleText": "维保记录"
+      }
      }
   ],
   "tabBar":{

@@ -23,7 +23,9 @@
       </div>
     </div>
     <div class="home-content">
-      <div class="home-weibao">
+      <div
+        class="home-weibao"
+        @click="handleWb">
         <div class="tips">
           <img src="@/static/mp-weixin/home-page/warn.png" />
           <div>上次维保时间：</div>
@@ -216,6 +218,11 @@ onLoad(() => {
   getRegeo()
   getWeather()
 })
+const handleWb = () => {
+  uni.navigateTo({
+    url: '/pages/policerecord/index',
+  })
+}
 const handleToCOP = () => {
   uni.navigateTo({
     url: '/pages/consume-eletric/index',
